@@ -1,0 +1,2 @@
+1 make sure all component should be inside the package of where we @SpringBootApplication class defined
+ex: package com.kanand.ms.limitservice has  LimitServiceApplication class so all componnet should be inside package com.kanand.ms.limitservice.*
