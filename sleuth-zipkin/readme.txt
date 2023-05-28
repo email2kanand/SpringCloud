@@ -1,6 +1,6 @@
-#Distributed Tracing:
+# Distributed Tracing:
 
-##WHY:
+## WHY:
 With microservice one more problem is to be tracing a request. Since one request might go through diff MS in that case it is difficult to trace the request across Services/multi-threaded env.
 In monolith we use to get the thread name and search that, meaning all log with this thread represent the same request for that time span.
 But in MS it will go through different thread in different services to tracing with thread name will not be helpful.
