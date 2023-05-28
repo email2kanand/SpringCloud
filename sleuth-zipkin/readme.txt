@@ -1,20 +1,23 @@
-		Distributed Tracing:
+#Distributed Tracing:
 
-WHY:
+##WHY:
 With microservice one more problem is to be tracing a request. Since one request might go through diff MS in that case it is difficult to trace the request across Services/multi-threaded env.
 In monolith we use to get the thread name and search that, meaning all log with this thread represent the same request for that time span.
 But in MS it will go through different thread in different services to tracing with thread name will not be helpful.
 
-Solution:
+###Solution:
 Let’s consider if we can generate one ID and pass it across services for each request. Meaning we will generate one traceId that will flow with the request across service till the end of that request. In that case we can use that traceId to find the log for request.
-Now another issue will be as it will go thru diff MS and all will have the same ID then how to differentiate the log from MS specific, I mean how will know which log is from what MS belongs to.
-Solution:
+
+##Now another issue will be as it will go thru diff MS and all will have the same ID then how to differentiate the log from MS specific, I mean how will know which log is from what MS belongs to.
+###Solution:
 We can have one more span-id that will be created every time when req flows to new MS and it will be always associated with parent trace Id. 
 So finally, we will have [traceId (scope request), spanId (for MS)]
 And, within request in same MS we need to segregate some part of process to track the log for that part, we can create new span for that process. In that case we can easily identify the part of request process.
 
-How: Spring provides library to generate the traceId and spanId related feature called sleuth.
-Spring–sleuth has Tracer to manage the traceId and append this with log level(internal).
+##How: Spring provides library to generate the traceId and spanId related feature called sleuth.
+
+##Spring–sleuth:
+It has Tracer to manage the traceId and append this with log level(internal).
 Ex: [Service Name, TraceId, SpanId]
 2023-05-28 12:48:45.943 INFO [sleuth-zipkin,b8014fd9cadc055c,b8014fd9cadc055c] 38356 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
  ** To enable this, we have to add dependency as:
@@ -80,8 +83,8 @@ spring.sleuth.async.enable = false
 
 
 
-7.Zipkin
-WHY:  We discussed why we need sleuth. It is next step of that.
+##Zipkin
+###WHY:  We discussed why we need sleuth. It is next step of that.
 After sleuth we have log where each request has traceId and spanId that will represent part of that req processing.
 Now to trace req we have to search that traceId to find out all related logs. It will be difficult find and club manually.
 Solution: We can have a tool that we club all logs with same traceID and spanid show together.
