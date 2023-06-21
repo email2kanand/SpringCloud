@@ -21,6 +21,7 @@ public class CircuitBreakerController {
 	
 	@GetMapping("/sample-api")
 	//@Retry(name = "sample-api", fallbackMethod = "hardcodedResponse")
+	//if below line commented it will try 3 times 
 	@CircuitBreaker(name = "default", fallbackMethod = "hardcodedResponse")
 	//@RateLimiter(name="default")  within certain time period how many call allowed
 	@Retry(name="default") //default 3 times retry

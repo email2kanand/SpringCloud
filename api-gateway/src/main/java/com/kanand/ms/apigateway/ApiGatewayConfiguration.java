@@ -21,6 +21,8 @@ public class ApiGatewayConfiguration {
 						.uri("lb://currency-exchange-service"))
 				.route(p -> p.path("/currency-conversion/**")
 						.uri("lb://currency-conversion-service"))
+				.route(p -> p.path("/user-identity/**")
+						.uri("lb://identity-service"))
 				.route(p -> p.path("/currency-conversion-feign/**")
 						.uri("lb://currency-conversion-service"))
 				.route(p -> p.path("/currency-conversion-new/**")
