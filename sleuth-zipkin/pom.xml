@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kanand.ms</groupId>
-	<artifactId>limit-service</artifactId>
+	<artifactId>sleuth-zipkin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>limit-service</name>
 	<description>Demo project for Spring Boot</description>
@@ -55,6 +55,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+    <groupId>de.codecentric</groupId>
+    <artifactId>spring-boot-admin-starter-client</artifactId>
+    <version>2.4.1</version>
+</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
