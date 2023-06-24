@@ -9,6 +9,10 @@ import com.micro.entity.UserCredential;
 
 public class CustomUserDetails  implements UserDetails{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
 	
