@@ -1,4 +1,4 @@
-package com.kanand.ms.apigateway;
+package com.ms.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

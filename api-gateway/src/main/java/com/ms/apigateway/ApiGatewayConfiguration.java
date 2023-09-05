@@ -1,4 +1,4 @@
-package com.kanand.ms.apigateway;
+package com.ms.apigateway;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.GatewayFilterSpec;
@@ -6,7 +6,7 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.kanand.ms.apigateway.filter.AuthenticationFilter;
+import com.ms.apigateway.filter.AuthenticationFilter;
 
 @Configuration
 public class ApiGatewayConfiguration {
