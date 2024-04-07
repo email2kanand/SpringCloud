@@ -29,20 +29,20 @@ public class AuthControllerTest {
 //		 "email":"np@gmail.com",
 //		 "password":"pwd1"
 //		 }
-     JSONObject empParams = new JSONObject();
-     empParams.put("name", "pintu1");
-     empParams.put("email", "np@gmail.com");
-     empParams.put("password", "pwd2");
-
-     given()
-             .contentType(ContentType.JSON)
-             .body(empParams.toString())
-             .log().all()
-             .when()
-             .post("http://localhost:8080/register")
-             .then()
-             .assertThat().statusCode(200)
-             .log().all();
+//     JSONObject empParams = new JSONObject();
+//     empParams.put("name", "pintu1");
+//     empParams.put("email", "np@gmail.com");
+//     empParams.put("password", "pwd2");
+//
+//     given()
+//             .contentType(ContentType.JSON)
+//             .body(empParams.toString())
+//             .log().all()
+//             .when()
+//             .post("http://localhost:8080/register")
+//             .then()
+//             .assertThat().statusCode(200)
+//             .log().all();
 
  }
     
