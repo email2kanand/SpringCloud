@@ -1,5 +1,7 @@
 Initial
 
+mvn clean install -DskipTests
+
 Note : to use below urls comment out the prop spring.cloud.gateway.discovery.locator.enabled=true
 
 - http://localhost:8765/CURRENCY-EXCHANGE-SERVICE/currency-exchange/from/USD/to/INR
@@ -43,6 +45,18 @@ VAULT
  All the secure details are stored in Vault to avoid hard coding of them anywhere. All applications
   access Vault during initialization and while processing. Since Vault is the heart of the System,
   it should support highly availability and Fault Tolerance. 
+  
+ Rest-Assured and TestNG
+ -----------------------
+ https://www.techgeeknext.com/spring-boot/spring-boot-rest-assured
+ https://www.youtube.com/watch?v=JJ7Tp7_fX4c
+ 
+ We can override configuration parameters in spring boot in code, command-line arguments, ServletConfig init parameters, ServletContext init parameters, Java system properties, operating system variables, and application properties file.
+ 
+An important thing to keep in mind is that these application properties files have the lowest precedence compared to other forms of overriding application context properties.
+ 
+ In contrast to a Spring Boot application, a Spring Cloud application features a bootstrap context that is the parent of the application context. Although both of them share the same Environment, they have different conventions for locating the external configuration files.
+  
   
   
   
@@ -98,7 +112,7 @@ gateway will redirect to dashboard.
 
 need to check , how to invalidate before expire
 
-check how to define load balnacer strategy with gateaway.
+check how to define load balancer strategy with gateway.
   
 
 
